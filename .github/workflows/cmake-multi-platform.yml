@@ -66,8 +66,8 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: Task_Manager
-        path: Cpp/build/TaskManager
+        name: TaskManager
+        path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager
         retention-days: 2
     - name: Test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
@@ -75,5 +75,5 @@ jobs:
     - name : Download build artifacts
       uses: actions/download-artifact@v3
       with:
-        name: Task_Manager
-        path: Cpp/build/TaskManager
+        name: TaskManager 
+        path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager
