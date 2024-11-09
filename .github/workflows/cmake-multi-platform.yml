@@ -59,20 +59,22 @@ jobs:
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         -S ${{ github.workspace}}/Cpp
-
+  
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
+    - name : Prepare for Upload
+      shell: bash
+      run : |
+        sudo chmod 777 ${{ steps.strings.outputs.build-output-dir }}/TaskManager
+        tar -czvf ${{ steps.strings.outputs.build-output-dir }}/TaskManager.tar.gz ${{ steps.strings.outputs.build-output-dir }}/TaskManager
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: TaskManager
-        path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager
+        path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager.tar.gz
         retention-days: 2
-    - name : Set Permission
-      shell: bash
-      run : |
-        sudo chmod 777 ${{ steps.strings.outputs.build-output-dir }}/TaskManager
+
     - name: Test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       run: ctest --build-config ${{ matrix.build_type }}
