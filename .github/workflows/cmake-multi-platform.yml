@@ -69,11 +69,10 @@ jobs:
         name: TaskManager
         path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager
         retention-days: 2
+    - name : Set Permission
+      shell: bash
+      run : |
+        sudo chmod 777 ${{ steps.strings.outputs.build-output-dir }}/TaskManager
     - name: Test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       run: ctest --build-config ${{ matrix.build_type }}
-    - name : Download build artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: TaskManager 
-        path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager
