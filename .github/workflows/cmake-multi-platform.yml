@@ -69,7 +69,7 @@ jobs:
         sudo chmod 777 ${{ steps.strings.outputs.build-output-dir }}/TaskManager
         tar -czvf ${{ steps.strings.outputs.build-output-dir }}/TaskManager.tar.gz ${{ steps.strings.outputs.build-output-dir }}/TaskManager
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: TaskManager
         path: ${{ steps.strings.outputs.build-output-dir }}/TaskManager.tar.gz
