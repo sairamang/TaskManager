@@ -1,7 +1,7 @@
 # Task Manager
 Task Manager is a standalone Cpp / Python Application to manage your tasks and run your day effectively.
 
-![Task Manager](resources/TaskManagerScreenShot.png)
+![Task Manager](Cpp/resources/TaskManagerScreenShot.png)
 ## Build Instructions
 
 Clone the repo 
