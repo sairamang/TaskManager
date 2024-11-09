@@ -4,16 +4,14 @@ Task Manager is a standalone Cpp / Python Application to manage your tasks and r
 ## Build Instructions
 
 Clone the repo 
-`git clone https://github.com/sairamang/TaskManager.git`
 
-Create Build Folder
-`mkdir build`
 
-Run Cmake
-`cmake ..`
-
-Run Build
-`make`
+``` bash
+git clone https://github.com/sairamang/TaskManager.git`
+mkdir build
+cmake ..
+make
+```
 
 ## Usage
 Run the application
@@ -21,13 +19,15 @@ Run the application
 
 ## Dependency Required
 - Cmake 
-    `sudo apt-get install cmake`
 - OpenGL
-    `sudo apt update`
-     `sudo apt install libgl1-mesa-dev`
-     `sudo apt install freeglut3-dev`
 - glfw
-    Refer https://github.com/glfw/glfw    
+    Refer https://github.com/glfw/glfw 
+    ``` bash
+    sudo apt install cmake
+    sudo apt update
+    sudo apt install libgl1-mesa-dev
+    sudo apt install freeglut3-dev
+    ```   
 
 ## For Development
 - Install VsCode for Development Environment https://code.visualstudio.com/
