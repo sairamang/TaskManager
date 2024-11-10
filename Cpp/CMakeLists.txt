@@ -1,11 +1,19 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(TaskManager)
 cmake_policy(SET CMP0072 NEW)
+SET (
+RAPIDJSON_HEADER 
+${CMAKE_CURRENT_SOURCE_DIR}/rapidjson/
+${CMAKE_CURRENT_SOURCE_DIR}/rapidjson/error 
+${CMAKE_CURRENT_SOURCE_DIR}/rapidjson/internal 
+${CMAKE_CURRENT_SOURCE_DIR}/rapidjson/msinttypes
+)
 
 include_directories(
 ${CMAKE_CURRENT_SOURCE_DIR}/imgui
 ${CMAKE_CURRENT_SOURCE_DIR}/src
 ${CMAKE_CURRENT_SOURCE_DIR}/src/common
+${RAPIDJSON_HEADER}
 )
 
 find_package(OpenGL REQUIRED)
@@ -26,5 +34,5 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/common
 ${OPENGL_INCLUDE_DIR}
 ${GLFW_INCLUDE_DIR}
 ${GLEW_INCLUDE_DIR}
-
+${RAPIDJSON_HEADER}
 )
