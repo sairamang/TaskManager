@@ -1,16 +1,18 @@
 #pragma once 
 #include <unordered_map>
 #include <string>
-
+#define TASKMANAGER_CONFIG_JSON "TaskManager.json"
 struct TaskManagerConfig_t {
     std::string task_data;
+    std::string username;
+    std::string useremail;
 };
 
 
 class TaskManagerConfig 
 {
     public: 
-        TaskManagerConfig() = delete;
+        TaskManagerConfig();
         TaskManagerConfig(std::string);
         ~TaskManagerConfig();
 
