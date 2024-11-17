@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "taskname": "tasks1",
+            "listname": "list1",
+            "storypoint": 2
+        },
+        {
+            "taskname": "tasks2",
+            "listname": "list2",
+            "storypoint": 4
+        }
+    ],
+    "lists": [
+        {
+            "listname": "list1",
+            "taskname": [
+                "tasks1",
+                "tasks2"
+            ]
+        },
+        {
+            "listname": "list2",
+            "taskname": [
+                "tasks1"
+            ]
+        }
+    ]
+}

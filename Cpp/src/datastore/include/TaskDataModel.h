@@ -4,8 +4,8 @@
 struct TaskData
 {
     std::string task_name;
-    int story_point;
     std::string list_name;
+    int story_point;
 };
 
 struct ListData
