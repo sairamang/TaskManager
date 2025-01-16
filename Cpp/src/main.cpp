@@ -1,12 +1,13 @@
 #include "TaskManagerConfig.h"
 #include "TaskDataHandler.h"
 #include "TaskDataStore.h"
+#include "TaskManager.h"
 #include <iostream>
 // Main code
 using namespace std;
 int main(int, char**)
 {
-    // TaskManager myTaskManager;
+    TaskManager myTaskManager;
     TaskManagerConfig myTaskManagerConfig;
     myTaskManagerConfig.parse();
     auto& config = myTaskManagerConfig.GetConfig();
@@ -32,6 +33,6 @@ int main(int, char**)
             cout<<"Task Name"<<it2.task_name<<endl;
         }
     }
-    // myTaskManager.runeventloop();
+    myTaskManager.runeventloop();
     return 0;
 }
