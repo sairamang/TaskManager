@@ -16,23 +16,6 @@ int main(int, char**)
     data_handler.parse();
     TaskDataModel model;
     TaskDataStore::getModel(model);
-    for(auto& it : model.task_data_list)
-    {
-        cout<<"************* Tasks*************** "<<endl;
-        cout<<"Task name "<<it.task_name<<endl;
-        cout<<"list Name" <<it.list_name<<endl;
-        cout<<"story point"<<it.story_point<<endl;
-    }
-
-    for (auto& it:model.list_data_list)
-    {
-        cout<<"************Lists***************"<<endl;
-        cout<<"List Name "<<it.list_name<<endl;
-        for(auto&it2:it.tasks){
-            cout<<"Tasks :"<<it.list_name<<endl;
-            cout<<"Task Name"<<it2.task_name<<endl;
-        }
-    }
     myTaskManager.runeventloop();
     return 0;
 }
